@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+      <br>
+      <br>
+    <ul class="posts">
+        <% for(let i = 0; i < posts.length; i++) { %>
+          <li>
+                    <span class="badge"><%- posts[i].title %></span><div class="text"><%- posts[i].body %></div>
+                  <!--<%- posts[i].title %><%- posts[i].body %>-->
+              <br>
+          </li>
+      <% } %>
+    </ul>
+
+    <a href=<%- "http://localhost:3000/blog/".concat(usrstart) %> <button type="button" class="btn btn-default">Next</button></a>
+  </body>
+</html>

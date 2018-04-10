@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <ul>
+        <% for(let i = 0; i < posts.length; i++) { %>
+          <li>
+              <a href='<%= posts[i].postid %>'>
+                  <%- posts[i].title %>
+              </a>
+          </li>
+      <% } %>
+    </ul>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+  </body>
+  <a routerLink="/preview/"><button type="button" class="btn btn-default">Next</button></a>
+</html>
