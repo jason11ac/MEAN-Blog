@@ -1,0 +1,31 @@
+<div class="col-md-16">
+    <h1>{{title}}</h1>
+    <form (ngSumbit)="onSubmit()" #edit="ngForm">
+      <div class="col-sm-16">
+        <label for="name">Title</label>
+        <input type="text" placeholder="Title" class="form-control" id="title" 
+        [(ngModel)]="post.title" name="title"
+        #spy>
+        <br>
+        <script>
+          var x = document.cookie;
+          
+        </script>
+      </div>
+  
+      <div class="col-sm-16">
+        <label for="body">Body</label>
+        <textarea type="text" class="form-control" id="body" rows="5" 
+        [(ngModel)]="post.body" name="body"></textarea>
+      </div>
+      Last Modified: {{post.modified | date:'MM/dd/yyyy h:mm:ss a'}}
+      <br>
+      <br>
+    </form>
+  
+    <a routerLink="/"><button type="button" class="btn btn-danger" (click)="delete(); edit.reset()">Delete</button></a>
+    <button type="submit" class="btn btn-success" (click)="updatePost(); edit.form.markAsPristine()" [disabled]="!edit.form.dirty">Save</button>
+    <a routerLink="/preview/{{post.postid}}"><button type="button" class="btn btn-default">Preview</button></a>
+  
+</div>
+  

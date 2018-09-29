@@ -1,0 +1,11 @@
+<br>
+
+  <a routerLink="/edit/{{nextPostId}}"><button type="button" class="btn btn-default" (click)="newPost();">New Post</button></a>
+<br>
+<br>
+<ul class="posts">
+  <li *ngFor="let post of posts" [class.selected]="post === selectedPost" (click)="onSelect(post)" routerLink="/edit/{{post.postid}}">
+          <a routerLink="/edit/{{post.postid}}"><span class="badge">{{post.created | date:'MM/dd/yyyy h:mm:ss a'}}</span><div class="text">{{post.title}}</div></a>
+  </li>
+</ul>
+
